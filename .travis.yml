@@ -1,6 +1,9 @@
 language: ruby
 rvm:
 - 2.2.1
+
+script: rake travis
+
 deploy:
   provider: heroku
   api_key:
