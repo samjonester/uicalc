@@ -1,3 +1,10 @@
 language: ruby
 rvm:
 - 2.2.1
+deploy:
+  provider: heroku
+  api_key:
+    secure: S22czLgJQ2hQq27KN2SwUvuUHlMPtsSsB3wPnhHCKQoKMyMhYNR6ch2KcOsUNeA0M0pfxzdqEqM9RnMsZxv4wHi7u3GZqFIFPwNz/WWyKHGlqVDoCkFgsCCCHGAMkc7/B/P9NLB/zQ8UmlS9lL2Bm92T/jvVVtprmsxHBioGfViKM7hg1PJOZi8Cv7/3HT4mcS0rYVv+bC3KwqNYcSaLb3r/PXvy3ALJQB8kmzgDlIY1n3ZxImmjtvyB8R5hhLRjxNbLZrRNvCHDr8mGShNDU4yVmSFoMUPbEXGp6XCpbMJZhtejFVbS7Nu5713u0Wy1x0dXLpJfagFsBDa31jItDIxxJPbA4U/ToCFa57iKXkJk3jn9el2X7VQ2wePUmmT+GpArB7vL89y8wtTCm7Fd/W/cSwcbl1BKKH+d0vB16i4sToMTh0CIWBzIc/xtmPSN9n4rB13zpvueJNcHDnpXbp6sVLa2ZghJlHAqJfQ+RIt9FoupzGF5/7Z34Tern0nFMXYxRS/YPc4MGn0GvxUtmIeaoDuwv5kwX3q92DP22O4ZgR4gbRs2CIlzMGyY6Q7m/VXkx2lzwgVPgDx6MIszJ5WdieWaro/EFlu0yo98kDtyZZVs66yxkXVoDgSZu7aQpTI9i0tZ1zHMWV2eGkEaisroM9e5+i/KChO7HXWVAEs=
+  app: samjones-uicalc
+  on:
+    repo: samlawrencejones/uicalc
