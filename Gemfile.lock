@@ -165,6 +165,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemodel
+  activesupport
   byebug
   jbuilder (~> 2.0)
   jquery-rails
