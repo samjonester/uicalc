@@ -5,7 +5,7 @@
 https://rvm.io
 
 == Install
-# $ bundle install --without production
+$ bundle install --without production
 
 == Run all tests
-# $ rake travis
+$ rake travis
