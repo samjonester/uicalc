@@ -11,5 +11,8 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe CalculatorHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'should calculate' do
+    calculation = FactoryGirl.build(:calculation, initial_value: 0, addition_value: '15')
+    expect(helper.calculate(calculation)).to eq(15)
+  end
 end

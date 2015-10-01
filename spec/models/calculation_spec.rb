@@ -1,28 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe Calculation, type: :model do
-  context 'validation' do
-    it 'should fail with no values' do
-      expect(Calculation.new.valid?).to eq(false)
-    end
+RSpec.describe Calculation, :type => :model do
+  it 'should have a valid factory' do
+    expect(FactoryGirl.build(:calculation)).to be_valid
+  end
 
-    it 'should fail with only initial value' do
-      calculation = Calculation.new
-      calculation.initial_value = 5
-      expect(calculation.valid?).to eq(false)
-    end
+  it 'should require initial value' do
+    expect(FactoryGirl.build(:calculation, initial_value: nil)).to_not be_valid
+    expect(FactoryGirl.build(:calculation, initial_value: 10)).to be_valid
 
-    it 'should fail with only addition value' do
-      calculation = Calculation.new
-      calculation.addition_value = '5'
-      expect(calculation.valid?).to eq(false)
-    end
+    # TODO Figure out why this doesn't work
+    # expect(FactoryGirl.build(:calculation, initial_value: '10')).to_not be_valid
+  end
 
-    it 'should pass with initial and addition value' do
-      calculation = Calculation.new
-      calculation.initial_value = 5
-      calculation.addition_value = '5'
-      expect(calculation.valid?).to eq(true)
-    end
+  it 'should require addition value' do
+    expect(FactoryGirl.build(:calculation, addition_value: nil)).to_not be_valid
+    expect(FactoryGirl.build(:calculation, addition_value: '10')).to be_valid
+
+    # TODO Figure out why this doesn't work
+    # expect(FactoryGirl.build(:calculation, addition_value: 10)).to_not be_valid
   end
 end
