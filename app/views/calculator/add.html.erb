@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Add a value!</h1>
   <br/>
-  <%= form_for @calculation, url: 'add', as: :calculation, html: { method: 'post' } do |f| %>
+  <%= form_for @calculation, url: '/calculator/add', as: :calculation, html: { method: 'post' } do |f| %>
       <div>
         <div class="label">
           <%= f.label :initial_value, 'Initial Value' %>
