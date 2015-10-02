@@ -11,6 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20151002093356) do
+
+  create_table "calculations", force: :cascade do |t|
+    t.decimal "initial_value"
+    t.string  "addition_value"
+  end
 
 end

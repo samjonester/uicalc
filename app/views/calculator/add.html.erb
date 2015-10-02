@@ -1,16 +1,40 @@
 <div align="center">
-    <h1>Add a value!</h1>
-    <br/>
+  <h1>Add a value!</h1>
+  <br/>
+  <%= form_for @calculation, url: 'add', as: :calculation, html: { method: 'post' } do |f| %>
+      <div>
+        <div class="label">
+          <%= f.label :initial_value, 'Initial Value' %>
+        </div>
+        <div class="input">
+          <%= f.number_field :initial_value %>
+        </div>
+        <br/><br/>
+      </div>
+      <div>
+        <div class="label">
+          <%= f.label :addition_value, 'Add This' %>
+        </div>
+        <div class="input">
+          <%= f.text_field :addition_value %>
+        </div>
+        <br/><br/>
+      </div>
+      <div>
+        <div class="input">
+          <%= f.submit 'Submit' %>
+        </div>
+        <br/><br/>
+      </div>
+  <% end %>
 
-    <div>
-        <div class="label"><label for="initialValue">Initial Value</label></div>
-        <div class="input"><input type="text" name="initialValue" id="initialValue"/></div>
-        <br/><br/></div>
-    <div>
-        <div class="label"><label for="addValue">Add This</label></div>
-        <div class="input"><input type="text" name="addValue" id="addValue"/></div>
-        <br/><br/></div>
-    <div>
-        <div class="input"><input type="submit"/></div>
-        <br/><br/></div>
+
+  <% if @total.present? %>
+      <h2>Your Total!</h2>
+      <br/>
+
+      <div class="total">
+        <%= @total %>
+      </div>
+  <% end %>
 </div>

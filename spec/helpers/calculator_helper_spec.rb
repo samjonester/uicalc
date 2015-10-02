@@ -12,7 +12,7 @@ require 'rails_helper'
 # end
 RSpec.describe CalculatorHelper, type: :helper do
   it 'should calculate' do
-    calculation = FactoryGirl.build(:calculation, initial_value: 0, addition_value: '15')
+    calculation = Calculation.new({initial_value: 0, addition_value: '15'})
     expect(helper.calculate(calculation)).to eq(15)
   end
 end

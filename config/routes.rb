@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'calculator/add'
+  match 'calculator/add', :to => 'calculator#add', :as => :calculation, via: [:get, :post]
 
   root :controller => 'calculator', :action => 'add'
 
