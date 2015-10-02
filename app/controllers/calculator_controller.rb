@@ -3,6 +3,6 @@ class CalculatorController < ApplicationController
   def add
     @calculation = Calculation.new(params[:calculation])
 
-    @total = calculate(@calculation) if params[:calculation].present?
+		@total = calculate(@calculation) if @calculation.valid?
   end
 end
