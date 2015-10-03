@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Add a value!</h1>
+  <h1 id="title">Add a value!</h1>
   <br/>
   <%= form_for @calculation, url: '/calculator/add', as: :calculation, html: { method: 'post' } do |f| %>
       <div>
@@ -33,7 +33,7 @@
       <h2>Your Total!</h2>
       <br/>
 
-      <div class="total">
+      <div id="total">
         <%= @total %>
       </div>
   <% end %>

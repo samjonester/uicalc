@@ -1,6 +1,6 @@
 Feature: Design and build a ui that adds
 
-  @wip
+  @javascript
   Scenario Outline: I add
     Given I have the initial value <initial_value>
     When I add the value <addition_value>
@@ -11,4 +11,4 @@ Feature: Design and build a ui that adds
       | 0             | 10             | 10                |
       | 0             | 10,20          | 30                |
       | 10            | 50             | 60                |
-      | 0             | 10\n20         | 30                |
+      | 10            | 50,40          | 100               |
