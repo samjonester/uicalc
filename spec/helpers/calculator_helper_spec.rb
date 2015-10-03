@@ -11,8 +11,31 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe CalculatorHelper, type: :helper do
-  it 'should calculate' do
-    calculation = Calculation.new({initial_value: 0, addition_value: '15'})
-    expect(helper.calculate(calculation)).to eq(15)
+  [
+      {
+          initial_value: 0,
+          addition_value: '15',
+          total: 15,
+      },
+      {
+          initial_value: 0,
+          addition_value: '15,20',
+          total: 35,
+      },
+      {
+          initial_value: 10,
+          addition_value: '15',
+          total: 25,
+      },
+      {
+          initial_value: 10,
+          addition_value: '15,20',
+          total: 45,
+      }
+  ].each do |test|
+    it 'should calculate' do
+      calculation = Calculation.new({initial_value: test[:initial_value], addition_value: test[:addition_value]})
+      expect(helper.calculate(calculation)).to eq(test[:total])
+    end
   end
 end
