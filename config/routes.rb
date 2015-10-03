@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   match 'calculator/add', :to => 'calculator#add', :as => :calculation, via: [:get, :post]
 
-  root :controller => 'calculator', :action => 'add'
+  root 'calculator#add'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
